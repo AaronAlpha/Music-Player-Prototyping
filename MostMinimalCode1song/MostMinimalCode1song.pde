@@ -41,6 +41,7 @@ void keyPressed() {
     //End Looping only once
   }//'{}' is the body of the if statement; hence making the single line if statement into a multiline if statement
 
+
   if (key == 'i' || key == 'I') song1.loop(); //Inifinte Loop, no parameter or -1
   if (key >= '2' || key == '0') println("I dont loop  that much press 'i' for infinite loop"); //'0' is the quivalent to infinity in maths
 
@@ -51,8 +52,27 @@ void keyPressed() {
     } else {
       song1.mute();
     }
+  }//end Mute button
+
+
+  //start fast forward key 
+  if (key == 'f' || key == 'F') song1.skip(1000); //skip forward by 1 second(1000 milliseconds)
+  //end
+  //start reverse forward key
+  if (key == 'r' || key == 'R') song1.skip(-1000); //skip backwards by (-)1 second(-1000 milliseconds)
+  //end
+
+
+  //stop button
+  if (key == 's' || key == 'S') {
+    if (song1.isPlaying()) { //song is playing
+      song1.pause();
+      song1.rewind();
+    } else {//song not playing
+      song1.rewind();
+    }
   }
-  
+
 
 
 
