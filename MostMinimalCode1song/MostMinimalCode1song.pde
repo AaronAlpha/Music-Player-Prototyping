@@ -17,8 +17,8 @@ void setup() {
 }
 
 void draw() {
-  if () println("There are", , "loops left.");
-  if (song1.isLooping() && song1.loopCount() == -1) println("Looping infinitely");
+  if (song1.isLooping() && song1.loopCount() != 1) println("There are", song1.loopCount(), "loops left.");
+  if (song1.isLooping() && song1.loopCount() == -1) println("Looping infinitely"); //-1 denotes infinity 
   if (song1.isPlaying() && !song1.isLooping()) println("Play once."); //'!' is the 'NOT' operator; is basically saying -> 'if the song is playing AND NOT looping, then print "Play Once."
   
 } 
