@@ -26,8 +26,14 @@ void draw() {
 
 void keyPressed() {
   //First play button
-  if (key == 'p' || key == 'P') song1.play(); //Note: for char -> characters would use single quotes (''); whereas for str -> strings would use double quotes ("").
-
+  //if (key == 'p' || key == 'P') {
+  //  song1.play(); //Note: for char -> characters would use single quotes (''); whereas for str -> strings would use double quotes ("").
+  //  if (song1.position() >= song1.length()) {
+  //    song1.rewind();
+  //  }
+  //}
+  
+  
   //Alternate play button, as a finite loop() && infinite loop()
   //only press a number for this code below
   println(key);
@@ -66,12 +72,25 @@ void keyPressed() {
   //stop button
   if (key == 's' || key == 'S') {
     if (song1.isPlaying()) { //song is playing
-      song1.pause();
       song1.rewind();
+      song1.play();
     } else {//song not playing
       song1.rewind();
     }
   }
+
+
+  if (key == 'p' || key == 'P') {//Pause Button anf Play button
+    if (song1.isPlaying()) {
+      song1.pause();
+    } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
+      song1.pause();
+      song1.rewind();
+    } else {
+      song1.play(); //if the song is not playing then we mae the song play
+      
+    }
+  }//end
 
 
 
