@@ -19,7 +19,7 @@ void setup() {
 void draw() {
   if () println("There are", , "loops left.");
   if () println("Looping infinitely");
-  if () println("Play once.");
+  if (song1.isPlaying() && !song1.isLooping()) println("Play once.");
   
 } 
 
