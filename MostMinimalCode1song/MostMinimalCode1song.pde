@@ -17,6 +17,10 @@ void setup() {
 }
 
 void draw() {
+  if () println("There are", , "loops left.");
+  if () println("Looping infinitely");
+  if () println("Play once.");
+  
 } 
 
 
@@ -27,13 +31,17 @@ void keyPressed() {
   //Alternate play button, as a finite loop() && infinite loop()
   //only press a number for this code below
   println(key);
-  if (key == '1' || key == '9') {
+  if (key == '1'  /*|| key == '9'*/) {//Looping only once
     if (key == '1') println("Looping once");
-    if (key == '9') println("Looping 9 times"); // -> the Number 9 is assumed to be MASSIVE, which simulates infinity
+    //(key == '9') println("Looping 9 times");
     String keystr  = String.valueOf(key);
     println("Number of repeats is", keystr);
     int loopNum = int(keystr);
     song1.loop(loopNum);
+    //End Looping only once
+  
+  if (key == 'i' || key == 'I') song1.loop(); //Inifinte Loop, no parameter or -1
+  if (key >= '2' || key == '0') println("I dont loop  that much press 'i' for infinite loop"); //'0' is the quivalent to infinity in maths
     
     
   }//'{}' is the body of the if statement; hence making the single line if statement into a multiline if statement
