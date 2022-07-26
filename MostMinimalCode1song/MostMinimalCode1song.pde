@@ -9,11 +9,23 @@ import ddf.minim.ugens.*;
 Minim minim; //creates an object to access all functions
 AudioPlayer song1;
 
+color black = #000000, purple = #2C08FF, resetWhite = 255;
+float titleX, titleY, titleWidth, titleHeight;
+
 void setup() {
+  
+  size(500, 400); //Landscape
+  
   minim = new Minim(this); //this loads from a data directory, loadFile should also load from project folder, like loadImage
   song1 = minim.loadFile("MostMinimalCode_OneSongPlay_groove.mp3"); //in this method, can pass absoltue path, file name and extension, and URL
   //song1.play(); //this method has a parameter -> its the miliseconds from which the song starts to play
   //song1.loop(0); //its parameter passed is the number of times it will repeat; if no parameter passed, it will play infintely
+  
+  //Population
+  titleX = width*1/4;
+  titleY = height*0;
+  titleWidth = width*1/2;
+  titleHeight = height*1/10;
 }
 
 void draw() {
