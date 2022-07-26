@@ -11,6 +11,7 @@ AudioPlayer song1;
 
 color black = #000000, purple = #2C08FF, resetWhite = 255;
 float titleX, titleY, titleWidth, titleHeight;
+PFont titleFont;
 
 void setup() {
   
@@ -26,6 +27,7 @@ void setup() {
   titleY = height*0;
   titleWidth = width*1/2;
   titleHeight = height*1/10;
+  titleFont = createFont("Arial Narrow", 55);
 }
 
 void draw() {
@@ -37,7 +39,7 @@ void draw() {
   background(black);
   rect(titleX, titleY, titleWidth, titleHeight);
   fill(purple);//is the ink
-  textAlign();
+  textAlign(CENTER, CENTER);
   textFont(titleFont, 30); //title font
   text();
   fill(resetWhite);
