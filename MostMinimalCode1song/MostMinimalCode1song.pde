@@ -19,6 +19,7 @@ void setup() {
   
   minim = new Minim(this); //this loads from a data directory, loadFile should also load from project folder, like loadImage
   song1 = minim.loadFile("MostMinimalCode_OneSongPlay_groove.mp3"); //in this method, can pass absoltue path, file name and extension, and URL
+  songMetaData1 = song1.getMetaData();
   //song1.play(); //this method has a parameter -> its the miliseconds from which the song starts to play
   //song1.loop(0); //its parameter passed is the number of times it will repeat; if no parameter passed, it will play infintely
   
@@ -41,10 +42,10 @@ void draw() {
   fill(purple);//is the ink
   textAlign(CENTER, CENTER);
   textFont(titleFont, 30); //title font
-  text();
+  text(songMetaData1.title(), titleX, titleY, titleWidth, titleHeight);
   fill(resetWhite);
   
-
+  
 } 
 
 
