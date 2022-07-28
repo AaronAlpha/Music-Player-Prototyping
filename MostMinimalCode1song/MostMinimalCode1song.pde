@@ -31,23 +31,7 @@ void setup() {
   titleWidth = width*1/2;
   titleHeight = height*1/10;
   titleFont = createFont("Arial Narrow", 55);
-}
-
-void draw() {
-  if (song1.isLooping() && song1.loopCount() != 1) println("There are", song1.loopCount(), "loops left.");
-  if (song1.isLooping() && song1.loopCount() == -1) println("Looping infinitely"); //-1 denotes infinity 
-  if (song1.isPlaying() && !song1.isLooping()) println("Play once."); //'!' is the 'NOT' operator; is basically saying -> 'if the song is playing AND NOT looping, then print "Play Once."
-  println("Song position", song1.position(), "Song length", song1.length());
-
-  background(black);
-  rect(titleX, titleY, titleWidth, titleHeight);
-  fill(purple);//is the ink
-  textAlign(CENTER, CENTER);
-  textFont(titleFont, 30); //title font
-  text(songMetaData1.title(), titleX, titleY, titleWidth, titleHeight);
-  fill(resetWhite);
-
-
+  
   //Verifying Meta Data, 18 println's 
   println( "File Name: ", songMetaData1.fileName() );
   println( "Song Length (in milliseconds): ", songMetaData1.length() );
@@ -67,6 +51,25 @@ void draw() {
   println( "Track: ", songMetaData1.track() );
   println( "Genre: ", songMetaData1.genre() );
   println( "Encoded: ", songMetaData1.encoded() ); //how a computer reads the file
+  
+}
+
+void draw() {
+  //if (song1.isLooping() && song1.loopCount() != 1) println("There are", song1.loopCount(), "loops left.");
+  //if (song1.isLooping() && song1.loopCount() == -1) println("Looping infinitely"); //-1 denotes infinity 
+  //if (song1.isPlaying() && !song1.isLooping()) println("Play once."); //'!' is the 'NOT' operator; is basically saying -> 'if the song is playing AND NOT looping, then print "Play Once."
+  //println("Song position", song1.position(), "Song length", song1.length());
+
+  background(black);
+  rect(titleX, titleY, titleWidth, titleHeight);
+  fill(purple);//is the ink
+  textAlign(CENTER, CENTER);
+  textFont(titleFont, 30); //title font
+  text(songMetaData1.title(), titleX, titleY, titleWidth, titleHeight);
+  fill(resetWhite);
+
+
+
 
   
 } 
@@ -108,8 +111,8 @@ void keyPressed() {
       } else {
         song1.mute();
       }
-    } else if (song2.isMuted()) {
-      if (song1.isMuted()) {
+    } else if (song2.isPlaying()) {
+      if (song2.isMuted()) {
         song2.unmute();
       } else {
         song2.mute();
@@ -155,33 +158,34 @@ void keyPressed() {
   }
 
   if (key == 'p' || key == 'P') {//Pause Button anf Play button
-     song1.play();
        
       if (song1.isPlaying()){
         song1.pause();
       }
-      if ( song1.position() >= song1.length() - song1.length()*1/5) {
+      else if ( song1.position() >= song1.length() - song1.length()*1/5) {
         song1.rewind();
         song1.play();
       } else {
         song1.play(); //if the song is not playing then we mae the song play
       }
-      
-    // if (song1.position() >= song1.length() - song1.length()*(1/5 ) {
-    //  song2.play();
-      
-    //  if(song2.isPlaying()){
-    //    song2.pause(); 
-    //  }
-      
-    //  if (song2.position() >= song2.length() - song2.length()*(1/5) ) {
-    //    song2.rewind();
-    //    song2.play();
-    //  } else {
-    //    song2.play();
-    //  }
-    //}
   }//end
+  
+  if (key == 'p' || key == 'P') {
+    if (song1.position() >= song1.length() - song1.length()*1/5 ) {
+      song2.play();
+      
+      if(song2.isPlaying()){
+        song2.pause(); 
+      }
+      
+      if (song2.position() >= song2.length() - song2.length()*(1/5) ) {
+        song2.rewind();
+        song2.play();
+      } else {
+        song2.play();
+      }
+    }
+  }
 
 
 
