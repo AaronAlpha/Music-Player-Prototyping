@@ -7,7 +7,7 @@ import ddf.minim.ugens.*;
 
 //Global Variables
 Minim minim; //creates an object to access all functions
-AudioPlayer song1;
+AudioPlayer song1, song2;
 AudioMetaData songMetaData1;
 
 color black = #000000, purple = #2C08FF, resetWhite = 255;
@@ -20,6 +20,7 @@ void setup() {
   
   minim = new Minim(this); //this loads from a data directory, loadFile should also load from project folder, like loadImage
   song1 = minim.loadFile("MostMinimalCode_OneSongPlay_groove.mp3"); //in this method, can pass absoltue path, file name and extension, and URL
+  song2 = minim.loadFile("Waterfall.mp3");
   songMetaData1 = song1.getMetaData();
   //song1.play(); //this method has a parameter -> its the miliseconds from which the song starts to play
   //song1.loop(0); //its parameter passed is the number of times it will repeat; if no parameter passed, it will play infintely
@@ -45,6 +46,27 @@ void draw() {
   textFont(titleFont, 30); //title font
   text(songMetaData1.title(), titleX, titleY, titleWidth, titleHeight);
   fill(resetWhite);
+  
+  
+  //Verifying Meta Data, 18 println's 
+  println( "File Name: ", songMetaData1.fileName() );
+  println( "Song Length (in milliseconds): ", songMetaData1.length() );
+  println( "Song Length (in seconds): ", songMetaData1.length()/1000 );
+  println( "Song Length (in minutes & seconds): ", (songMetaData1.length()/1000)/60, " minute", (songMetaData1.length()/1000)-((songMetaData1.length()/1000)/60 * 60), " seconds" );
+  println( "Song Title: ", songMetaData1.title() );
+  println( "Author: ", songMetaData1.author() ); //Song Writer or Performer
+  println( "Composer: ", songMetaData1.composer() ); //Song Writer
+  println( "Orchestra: ", songMetaData1.orchestra() );
+  println( "Album: ", songMetaData1.album() );
+  println( "Disk: ", songMetaData1.disc() );
+  println( "Publisher: ", songMetaData1.publisher() );
+  println( "Date Release: ", songMetaData1.date() );
+  println( "Copyright: ", songMetaData1.copyright() );
+  println( "Comment: ", songMetaData1.comment() );
+  println( "Lyrics: ", songMetaData1.lyrics() );
+  println( "Track: ", songMetaData1.track() );
+  println( "Genre: ", songMetaData1.genre() );
+  println( "Encoded: ", songMetaData1.encoded() ); //how a computer reads the file
   
   
 } 
