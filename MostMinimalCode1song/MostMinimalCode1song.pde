@@ -69,6 +69,8 @@ void draw() {
   println( "Encoded: ", songMetaData1.encoded() ); //how a computer reads the file
   
   
+  //if ();
+  
 } 
 
 
@@ -76,9 +78,6 @@ void keyPressed() {
   //First play button
   //if (key == 'p' || key == 'P') {
   //  song1.play(); //Note: for char -> characters would use single quotes (''); whereas for str -> strings would use double quotes ("").
-  //  if (song1.position() >= song1.length()) {
-  //    song1.rewind();
-  //  }
   //}
   
   
@@ -132,8 +131,9 @@ void keyPressed() {
     if (song1.isPlaying()) {
       song1.pause();
     } else if ( song1.position() >= song1.length() - song1.length()*1/5 ) {
-      song1.pause();
       song1.rewind();
+      song1.play();
+      
     } else {
       song1.play(); //if the song is not playing then we mae the song play
       
