@@ -68,8 +68,7 @@ void draw() {
   println( "Genre: ", songMetaData1.genre() );
   println( "Encoded: ", songMetaData1.encoded() ); //how a computer reads the file
 
-
-  //if (song1.lenght == );
+  
 } 
 
 
@@ -123,7 +122,7 @@ void keyPressed() {
   if (key == 'f' || key == 'F') {
     if (song1.isPlaying()) {
       song1.skip(1000);
-    } else if (song2.isPlaying()){
+    } else if (song2.isPlaying()) {
       song2.skip(1000);
     }
   } //skip forward by 1 second(1000 milliseconds)
@@ -132,11 +131,11 @@ void keyPressed() {
   if (key == 'r' || key == 'R') {
     if (song1.isPlaying()) {
       song1.skip(-1000);
-    } else if (song2.isPlaying()){
+    } else if (song2.isPlaying()) {
       song2.skip(-1000);
     }
   }
-    //skip backwards by (-)1 second(-1000 milliseconds)
+  //skip backwards by (-)1 second(-1000 milliseconds)
   //end
 
 
@@ -145,37 +144,43 @@ void keyPressed() {
     if (song1.isPlaying()) { //song1 is playing
       song1.rewind();
       song1.play();
-      
     } else if (song1.isPlaying()) { //song1 not playing
-    song1.rewind();
-    } else if(song2.isPlaying()) {
+      song1.rewind();
+    } else if (song2.isPlaying()) {
       song2.rewind();
       song2.play();
-      
-    } else if(song2.isPlaying()) {
-      song2.rewind();      
+    } else if (song2.isPlaying()) {
+      song2.rewind();
     }
   }
 
   if (key == 'p' || key == 'P') {//Pause Button anf Play button
-    if (song1.isPlaying()) {
-      song1.pause();
-    if ( song1.position() >= song1.length() - song1.length()*(song1.position()/song1.length()) {
-      song1.rewind();
-      song1.play();
-    } else {
-      song1.play(); //if the song is not playing then we mae the song play
-    }
-  } else if (song2.isPlaying()) {
-    song2.play();
-    if (song2.position() >= song2.length() - song2.length()*(song2.position()/song2.length()) {
-      song2.rewind();
-      song2.play();
-    } else {
-      song2.play();
-    }
-  }
-    
+     song1.play();
+       
+      if (song1.isPlaying()){
+        song1.pause();
+      }
+      if ( song1.position() >= song1.length() - song1.length()*1/5) {
+        song1.rewind();
+        song1.play();
+      } else {
+        song1.play(); //if the song is not playing then we mae the song play
+      }
+      
+    // if (song1.position() >= song1.length() - song1.length()*(1/5 ) {
+    //  song2.play();
+      
+    //  if(song2.isPlaying()){
+    //    song2.pause(); 
+    //  }
+      
+    //  if (song2.position() >= song2.length() - song2.length()*(1/5) ) {
+    //    song2.rewind();
+    //    song2.play();
+    //  } else {
+    //    song2.play();
+    //  }
+    //}
   }//end
 
 
