@@ -147,14 +147,9 @@ void keyPressed() {
     if (song1.isPlaying()) { //song1 is playing
       song1.rewind();
       song1.play();
-    } else if (song1.isPlaying()) { //song1 not playing
+    } else { //song1 not playing
       song1.rewind();
-    } else if (song2.isPlaying()) {
-      song2.rewind();
-      song2.play();
-    } else if (song2.isPlaying()) {
-      song2.rewind();
-    }
+    } 
   }
 
   if (key == 'p' || key == 'P') {//Pause Button anf Play button
