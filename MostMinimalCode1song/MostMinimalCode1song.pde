@@ -111,31 +111,21 @@ void keyPressed() {
       } else {
         song1.mute();
       }
-    } else if (song2.isPlaying()) {
-      if (song2.isMuted()) {
-        song2.unmute();
-      } else {
-        song2.mute();
-      }
-    }
-  }//end Mute button
+   }//end Mute button
+  }
 
 
   //start fast forward key 
   if (key == 'f' || key == 'F') {
     if (song1.isPlaying()) {
       song1.skip(1000);
-    } else if (song2.isPlaying()) {
-      song2.skip(1000);
-    }
-  } //skip forward by 1 second(1000 milliseconds)
+  }//skip forward by 1 second(1000 milliseconds)
   //end
+  
   //start reverse forward key
   if (key == 'r' || key == 'R') {
     if (song1.isPlaying()) {
       song1.skip(-1000);
-    } else if (song2.isPlaying()) {
-      song2.skip(-1000);
     }
   }
   //skip backwards by (-)1 second(-1000 milliseconds)
