@@ -145,8 +145,8 @@ void keyPressed() {
   //stop button
   if (key == 's' || key == 'S') {
     if (song1.isPlaying()) { //song1 is playing
+      song1.pause();
       song1.rewind();
-      song1.play();
     } else { //song1 not playing
       song1.rewind();
     } 
