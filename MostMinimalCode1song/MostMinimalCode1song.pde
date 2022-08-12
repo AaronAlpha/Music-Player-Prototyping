@@ -170,22 +170,24 @@ void keyPressed() {
       }
   }//end
   
-  if (key == 'p' || key == 'P') {
-    if (song1.position() >= song1.length() - song1.length()*1/5 ) {
-      song2.play();
+  //if (key == 'p' || key == 'P') {
+  //  if (song1.position() >= song1.length() - song1.length()*1/5 ) {
+  //    song2.play();
       
-      if(song2.isPlaying()){
-        song2.pause(); 
-      }
+  //    if(song2.isPlaying()){
+  //      song2.pause(); 
+  //    }
       
-      if (song2.position() >= song2.length() - song2.length()*(1/5) ) {
-        song2.rewind();
-        song2.play();
-      } else {
-        song2.play();
-      }
-    }
-  }
+  //    if (song2.position() >= song2.length() - song2.length()*(1/5) ) {
+  //      song2.rewind();
+  //      song2.play();
+  //    } else {
+  //      song2.play();
+  //    }
+  //  }
+  //}
+  
+  //the above was the trying of moving to next song funciton  button
 
 
 
