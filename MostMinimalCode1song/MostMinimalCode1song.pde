@@ -93,9 +93,6 @@ void keyPressed() {
     int loopNum = int(keystr);
     if (song1.isPlaying()) {
       song1.loop(loopNum);
-    } else if (song2.isPlaying()) {
-      song2.loop(loopNum);
-    }
     //End Looping only once
   }//'{}' is the body of the if statement; hence making the single line if statement into a multiline if statement
 
