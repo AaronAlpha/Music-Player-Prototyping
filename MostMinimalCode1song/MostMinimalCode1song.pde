@@ -111,8 +111,8 @@ void keyPressed() {
       } else {
         song1.mute();
       }
-   }//end Mute button
-  }
+   }
+  }//end Mute button
 
 
   //start fast forward key 
